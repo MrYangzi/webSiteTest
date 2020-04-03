@@ -1,0 +1,24 @@
+<template>
+  <div class="shop-list">
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'ShopList',
+  data () {
+    return {
+      msg: 'Welcome to Your vTaobao'
+    }
+  },
+  components:{
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped lang="less">
+    .shop-list{
+        font-size:14px;
+    }
+</style>
