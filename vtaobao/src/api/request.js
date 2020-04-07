@@ -11,7 +11,7 @@ const service = axios.create({
     }
 })
 
-/* service.interceptors.request.use(config => {
+service.interceptors.request.use(config => {
     //config.headers['X-Token'] = getToken() // 让每个请求携带token-- ['X-Token']为自定义key 请根据实际情况自行修改
     return config;
 }, error => {
@@ -27,5 +27,5 @@ service.interceptors.response.use(
         console.log('err' + error);
         Promise.reject(error);
     }
-) */
+)
 export default service

@@ -32,7 +32,7 @@ export default new Router({
                 cache: false
             }
         }, {
-            path: '/shops/detail',
+            path: '/shops/detail/:id',
             name: 'shop-detail',
             component: _import('shops/detail'),
             meta: {

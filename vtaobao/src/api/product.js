@@ -6,3 +6,11 @@ export function getProductList() {
         method: 'get'
     })
 }
+
+export function getShopDetail(data) {
+    return request({
+        url: 'product/productDetail',
+        method: 'get',
+        data
+    })
+}

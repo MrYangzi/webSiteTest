@@ -1,7 +1,7 @@
 <template>
   <div class="shop-list">
       <ul>
-        <li v-for="(item,index) in shops" :key="index">
+        <li v-for="(item,index) in shops" :key="index" @click="skipToDetail(item.id)">
             <div class="shop-wrap">
                 <div class="shop-img">
                     <img :src="item.imgSrc" />
@@ -32,7 +32,14 @@ export default {
     })
   },
   methods:{
-    
+    skipToDetail(id){
+      this.$router.push({
+        name:'shop-detail',
+        params:{
+          id
+        }
+      })
+    }
   }
 }
 </script>
