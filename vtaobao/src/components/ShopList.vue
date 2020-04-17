@@ -16,6 +16,7 @@
 
 <script>
 import {getProductList} from '../api/product'
+import {EventBus} from './event-bus'
 
 export default {
   name: 'ShopList',
@@ -24,12 +25,19 @@ export default {
        shops:[]
     }
   },
+  inject:['log'],
   created(){
     getProductList().then(res=>{
       if(res.data){
         this.shops=res.data;
       }
     })
+  },
+  mounted(){
+     this.log('this is shoplist');
+    /*  EventBus.$on('aMsg',msg=>{
+        console.log('list接收消息'+msg);
+    }); */
   },
   methods:{
     skipToDetail(id){

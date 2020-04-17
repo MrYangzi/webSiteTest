@@ -20,9 +20,19 @@ export default {
       msg: 'Welcome to Your vTaobao'
     }
   },
+  provide:function(){
+    return {
+        log:this.logParent
+    }
+  },
   components:{
     Swipe,
     ShopList
+  },
+  methods:{
+    logParent(msg){
+      console.log(msg);
+    }
   }
 }
 </script>

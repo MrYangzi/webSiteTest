@@ -10,6 +10,7 @@
 import banner1 from '@/assets/images/banner_1.jpg'
 import banner2 from '@/assets/images/banner_2.jpg'
 import banner3 from '@/assets/images/banner_3.jpg'
+import {EventBus} from '@/components/event-bus.js'
 
 export default {
   name: 'Swipe',
@@ -26,6 +27,10 @@ export default {
          imgSrc:banner3
        }]
     }
+  },
+  mounted(){
+    this.$parent.logParent('this is swipe');
+    // EventBus.$emit("aMsg", '来自swipe页面的消息');
   }
 }
 </script>

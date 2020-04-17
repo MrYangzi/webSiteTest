@@ -2,7 +2,7 @@ import { postCart } from '@/api/cart'
 
 const cart = {
     state: {
-        shops: []
+        shops: JSON.parse(sessionStorage.getItem('cart-shops')) || []
     },
     getters: {
         shopsSum: state => {
@@ -11,13 +11,13 @@ const cart = {
     },
     mutations: {
         joinCart(state, shop) {
-            state.shops.push(shop)
+            state.shops.push(shop);
+            sessionStorage.setItem('cart-shops', JSON.stringify(state.shops));
         }
     },
     actions: {
         requestJoinCart({ commit }, shop) {
             postCart(shop).then(res => {
-                console.log(res.data);
                 commit('joinCart', res.data)
             });
         }
